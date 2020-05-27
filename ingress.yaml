@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: flask-ingress
+  annotations:
+spec:
+  rules:
+    - host: app.dmontest.ee
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: python-flask
+              servicePort: 80
